@@ -25,3 +25,17 @@ class ServiceUser:
         else:
             return "Invalid User"
 
+      def update_user(self, name, new_job):
+            user_bd = self.check_user(name)
+            if user_bd is not None:
+                user_bd.job = new_job
+                return "Job was updated"
+            else:
+                return "User name is not found"
+
+        def select_user(self, name):
+        user_bd = self.check_user(name)
+        if user_bd is not None:
+            return "Job: " + user_bd.job
+        else:
+            return "User name is not found"
